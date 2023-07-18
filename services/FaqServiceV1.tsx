@@ -1,31 +1,33 @@
+import { h } from "@stencil/core";
+
 export class FaqServiceV1 {
 
-  public constructor() {}
+  public constructor(
+    private Expand: string,
+    private ExpandArea = 'div',
+    private ExpandContent = 'div',
+  ) {}
 
-  async load(props: { name: string }): Promise<FaqItem[]> {
+  async load(name: string): Promise<FaqItem[]> {
     return new Promise(resolve => {
       setTimeout(function () {
-        console.log('Load FAQs:', props.name);
+        console.log('Load FAQs:', name);
         resolve(example());
       }, 2000);
     });
   }
 
-  renderExpandArea = (h) => (list: FaqItem[]) => {
-    return <example-expand-area>
-      {list.map(this.renderExpand(h))}
-    </example-expand-area>;
+  renderExpandArea = (list: FaqItem[]) => {
+    return <this.ExpandArea>
+      {list.map(this.renderExpand)}
+    </this.ExpandArea>;
   }
 
-  renderExpand = (h) => (item: FaqItem) => {
-    return <example-expand>
+  renderExpand = (item: FaqItem) => {
+    return <this.Expand>
       <span slot="header">{item.title}</span>
-      <div slot="content">{item.description}</div>
-    </example-expand>;
-  }
-
-  renderSpinner = (h) => () => {
-    return <div>Spinner</div>;
+      <this.ExpandContent slot="content">{item.description}</this.ExpandContent>
+    </this.Expand>;
   }
 }
 
@@ -36,7 +38,7 @@ export class FaqServiceV1 {
 
 // Helper:
 
-interface FaqItem {
+export interface FaqItem {
   title?: string;
   description?: string;
   customerId?: string;
