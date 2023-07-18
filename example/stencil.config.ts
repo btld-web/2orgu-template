@@ -1,18 +1,21 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
-import { tailwindGlobal, tailwindHMR } from 'stencil-tailwind-plugin';
+import { PluginOpts, tailwindGlobal, tailwindHMR } from 'stencil-tailwind-plugin';
 import tailwind, { setPluginConfigurationDefaults } from 'stencil-tailwind-plugin';
-import { postcss } from '@stencil/postcss';
 import replace from 'postcss-replace';
-import autoprefixer from 'autoprefixer';
+import { default as tailwindTheme } from './tailwind.json';
 
-// TODO use actual url
-let envConfig = {
-  STORAGE_URL: 'test'
-}
+const STORAGE_URL = 'test'; // TODO use actual url
 
 setPluginConfigurationDefaults({
-  stripComments: true
+  ...PluginOpts.DEFAULT,
+  stripComments: true,
+  tailwindConf: { theme: tailwindTheme } as any,
+  postcss: {
+    plugins: [
+      replace({ data: { STORAGE_URL } })
+    ]
+  }
 });
 
 export const config: Config = {
@@ -23,13 +26,7 @@ export const config: Config = {
     sass(),
     tailwindGlobal(),
     tailwind(),
-    tailwindHMR(),
-    postcss({
-      plugins: [
-        replace({ data: { "STORAGE_URL": envConfig.STORAGE_URL } }),
-        autoprefixer
-      ]
-    })
+    tailwindHMR()
   ],
   outputTargets: [
     {

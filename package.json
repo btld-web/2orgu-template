@@ -25,6 +25,7 @@
   },
   "workspaces": [
     "example",
-    "services"
+    "services",
+    "layout"
   ]
 }

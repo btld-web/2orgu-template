@@ -1,5 +1,8 @@
+@import '~@2orgu/layout/test';
+
 :host {
   display: block;
   $color: blue;
-  background-color: $color;
+  background-image: url("{{STORAGE_URL}}/test123");
+  margin-top: $test;
 }

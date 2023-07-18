@@ -51,7 +51,7 @@ export class FaqServiceV1 {
           slot="content"
           class="csb-prose"
           innerHTML={item.description}
-        ></this.ExpandContent>
+        />
       </this.Expand>
     );
   };
