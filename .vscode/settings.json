@@ -1,0 +1,30 @@
+{
+    "editor.defaultFormatter": null,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.exclude": {
+        "**/node_modules": true
+    },
+    "prettier.singleQuote": true,
+    "prettier.proseWrap": "always",
+    "prettier.arrowParens": "avoid",
+    "cSpell.words": [
+        "orgu"
+    ]
+}

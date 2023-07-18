@@ -1,7 +1,12 @@
 {
     "name": "@2orgu/services",
     "version": "0.0.1",
-    "main": "index.ts",
-    "module": "index.ts"
-  }
-  
+    "module": "dist/index.js",
+    "dependencies": {
+        "typescript": "^5.1.6"
+    },
+    "scripts": {
+      "build": "tsc",
+      "watch:build": "tsc --watch"
+    }
+}

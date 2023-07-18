@@ -16,8 +16,9 @@
     "jsx": "react",
     "jsxFactory": "h",
     "resolveJsonModule": true,
+    "outDir": "dist"
   },
   "exclude": [
     "node_modules"
-  ]
+  ],
 }
