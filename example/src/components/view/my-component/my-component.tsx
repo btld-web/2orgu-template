@@ -26,6 +26,6 @@ export class MyComponent {
   }
 
   render() {
-    return <div class="mt-20">H World! I'm {this.getText()}</div>;
+    return <div class="mt-10">H World! I'm {this.getText()}</div>;
   }
 }

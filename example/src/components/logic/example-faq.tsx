@@ -1,5 +1,5 @@
 import { Component, h, Prop, State } from '@stencil/core';
-import { FaqServiceV1, FaqItem } from '@2orgu/services/FaqServiceV1';
+import { FaqServiceV1, FaqItem } from '@2orgu/services/faq/FaqServiceV1';
 
 @Component({
   tag: 'example-faq',
@@ -15,15 +15,12 @@ export class ExampleFaq {
   service = new FaqServiceV1('example-expand');
 
   componentWillLoad() {
-    this.service.load(this.name).then(data => {
-      this.faqs = data;
-      this.loading = false;
-    });
+    this.service.load(this);
   }
 
   render() {
     if (this.loading) {
-      return <div>Spinner TODO</div>;
+      return <div>Spinner TODO 1</div>;
     }
     return this.service.renderExpandArea(this.faqs);
   }
