@@ -1,4 +1,4 @@
-import { Component, h, Prop, State } from '@stencil/core';
+import { Component, Prop, State } from '@stencil/core';
 import { FaqServiceV1, FaqItem } from '@2orgu/services/faq/FaqServiceV1';
 
 @Component({
@@ -8,20 +8,16 @@ import { FaqServiceV1, FaqItem } from '@2orgu/services/faq/FaqServiceV1';
 export class ExampleFaq {
 
   @Prop() name: string;
-  
   @State() faqs: FaqItem[];
-  @State() loading = true;
 
-  service = new FaqServiceV1('example-expand');
+  service = new FaqServiceV1(this, 'example');
 
   componentWillLoad() {
-    this.service.load(this);
+    this.service.openOnlyOne = true;
+    this.service.load();
   }
 
   render() {
-    if (this.loading) {
-      return <div>Spinner TODO 1</div>;
-    }
-    return this.service.renderExpandArea(this.faqs);
+    return this.service.render();
   }
 }

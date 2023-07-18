@@ -1,4 +1,8 @@
 export interface FaqItem {
+  open?: boolean;
+}
+
+export interface FaqItem {
   title?: string;
   description?: string;
   customerId?: string;
