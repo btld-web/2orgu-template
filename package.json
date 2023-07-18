@@ -5,22 +5,25 @@
     "example": "example"
   },
   "scripts": {
-    "example": "npm run start -w example"
+    "start-example": "npm run build-libs && npm run start -w example",
+    "build-services": "npm run build -w services",
+    "build-libs": "npm run build-services"
   },
   "author": "Florian Rüberg",
   "dependencies": {
     "@stencil/core": "^4.0.0",
     "@stencil/postcss": "^2.1.0",
-    "autoprefixer": "^10.4.14",
-    "postcss-replace": "^2.0.1",
     "@stencil/sass": "^3.0.4",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.38",
+    "autoprefixer": "^10.4.14",
     "jest": "^27.5.1",
     "jest-cli": "^27.5.1",
+    "postcss-replace": "^2.0.1",
     "puppeteer": "^20.7.3",
     "stencil-tailwind-plugin": "^1.8.0",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.2",
+    "concurrently": "^8.2.0"
   },
   "workspaces": [
     "example",

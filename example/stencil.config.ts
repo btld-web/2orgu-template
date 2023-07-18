@@ -17,6 +17,7 @@ setPluginConfigurationDefaults({
 
 export const config: Config = {
   namespace: 'csb',
+  cacheDir: 'dist/.stencil',
   plugins: [
     sass(),
     tailwindGlobal(),

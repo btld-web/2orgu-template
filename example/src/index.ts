@@ -1,2 +1,3 @@
 export * from './components';
-export * from '@2orgu/services';
+import { ExampleFaqServiceV1 } from '@2orgu/services';
+window['ExampleFaqService'] = ExampleFaqServiceV1
