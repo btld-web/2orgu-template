@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "@2orgu/example",
   "version": "0.0.1",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
