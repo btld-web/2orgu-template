@@ -6,7 +6,7 @@ import { postcss } from '@stencil/postcss';
 import replace from 'postcss-replace';
 import autoprefixer from 'autoprefixer';
 
-// TODO fix
+// TODO use actual url
 let envConfig = {
   STORAGE_URL: 'test'
 }
@@ -18,6 +18,7 @@ setPluginConfigurationDefaults({
 export const config: Config = {
   namespace: 'csb',
   cacheDir: 'dist/.stencil',
+  hashFileNames: false,
   plugins: [
     sass(),
     tailwindGlobal(),

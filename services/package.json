@@ -1,11 +1,11 @@
 {
-    "name": "@2orgu/services",
-    "version": "0.0.1",
-    "module": "dist/index.js",
-    "dependencies": {
-        "typescript": "^5.1.6"
-    },
-    "scripts": {
-      "build": "tsc"
-    }
+  "name": "@2orgu/services",
+  "version": "0.0.1",
+  "module": "dist/index.js",
+  "dependencies": {
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
 }

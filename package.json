@@ -5,9 +5,8 @@
     "example": "example"
   },
   "scripts": {
-    "start-example": "npm run build-libs && npm run start -w example",
-    "build-services": "npm run build -w services",
-    "build-libs": "npm run build-services"
+    "start-example": "npm run start -w example",
+    "build-services": "npm run build -w services"
   },
   "author": "Florian Rüberg",
   "dependencies": {

@@ -1,8 +1,6 @@
-import { h } from '@stencil/core';
+export class FaqServiceV1 {
 
-export class ExampleFaqServiceV1 {
-
-  public constructor(private prefix: string) {}
+  public constructor() {}
 
   async load(props: { name: string }): Promise<FaqItem[]> {
     return new Promise(resolve => {
@@ -13,24 +11,20 @@ export class ExampleFaqServiceV1 {
     });
   }
 
-  renderExpandArea = (list: FaqItem[]) => {
-    let TagExpandArea = this.prefix + '-expand-area';
-
-    return <TagExpandArea>
-      {list.map(this.renderExpand)}
-    </TagExpandArea>
+  renderExpandArea = (h) => (list: FaqItem[]) => {
+    return <example-expand-area>
+      {list.map(this.renderExpand(h))}
+    </example-expand-area>;
   }
 
-  renderExpand = (item: FaqItem) => {
-    let TagExpand = this.prefix + '-expand';
-
-    return <TagExpand>
+  renderExpand = (h) => (item: FaqItem) => {
+    return <example-expand>
       <span slot="header">{item.title}</span>
       <div slot="content">{item.description}</div>
-    </TagExpand>;
+    </example-expand>;
   }
 
-  renderLoading() {
+  renderSpinner = (h) => () => {
     return <div>Spinner</div>;
   }
 }
