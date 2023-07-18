@@ -27,7 +27,7 @@ export class MyComponent {
 
   render() {
     let Test = 'csb-span';
-    return <div class="mt-20 text-blue">H World! I'm {this.getText()}
+    return <div class="mt-20 text-blue desktop:font-brand">H World! I'm {this.getText()}
       <Test onClick={() => {}} data-test={({'': true})}></Test>
     </div>;
   }

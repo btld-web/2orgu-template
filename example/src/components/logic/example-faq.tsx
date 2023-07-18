@@ -3,7 +3,7 @@ import { FaqServiceV1, FaqItem } from '@2orgu/services/faq/FaqServiceV1';
 
 @Component({
   tag: 'example-faq',
-  shadow: true,
+  shadow: true
 })
 export class ExampleFaq {
 

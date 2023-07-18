@@ -4,5 +4,6 @@
   display: block;
   $color: blue;
   background-image: url("{{STORAGE_URL}}/test123");
-  margin-top: $test;
+  margin-top: theme('screens.mobile.max');
+  margin-left: $test;
 }
