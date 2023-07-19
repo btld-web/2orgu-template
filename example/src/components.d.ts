@@ -5,9 +5,14 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { FaqItem } from "../../services/faq/FaqItem";
+export { FaqItem } from "../../services/faq/FaqItem";
 export namespace Components {
     interface ExampleExpand {
         "open": boolean;
+    }
+    interface ExampleExpandHeader {
+        "item": FaqItem;
     }
     interface ExampleFaq {
         "name": string;
@@ -34,6 +39,12 @@ declare global {
         prototype: HTMLExampleExpandElement;
         new (): HTMLExampleExpandElement;
     };
+    interface HTMLExampleExpandHeaderElement extends Components.ExampleExpandHeader, HTMLStencilElement {
+    }
+    var HTMLExampleExpandHeaderElement: {
+        prototype: HTMLExampleExpandHeaderElement;
+        new (): HTMLExampleExpandHeaderElement;
+    };
     interface HTMLExampleFaqElement extends Components.ExampleFaq, HTMLStencilElement {
     }
     var HTMLExampleFaqElement: {
@@ -48,6 +59,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "example-expand": HTMLExampleExpandElement;
+        "example-expand-header": HTMLExampleExpandHeaderElement;
         "example-faq": HTMLExampleFaqElement;
         "my-component": HTMLMyComponentElement;
     }
@@ -55,6 +67,9 @@ declare global {
 declare namespace LocalJSX {
     interface ExampleExpand {
         "open"?: boolean;
+    }
+    interface ExampleExpandHeader {
+        "item"?: FaqItem;
     }
     interface ExampleFaq {
         "name"?: string;
@@ -75,6 +90,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "example-expand": ExampleExpand;
+        "example-expand-header": ExampleExpandHeader;
         "example-faq": ExampleFaq;
         "my-component": MyComponent;
     }
@@ -84,6 +100,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "example-expand": LocalJSX.ExampleExpand & JSXBase.HTMLAttributes<HTMLExampleExpandElement>;
+            "example-expand-header": LocalJSX.ExampleExpandHeader & JSXBase.HTMLAttributes<HTMLExampleExpandHeaderElement>;
             "example-faq": LocalJSX.ExampleFaq & JSXBase.HTMLAttributes<HTMLExampleFaqElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
