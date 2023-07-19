@@ -1,9 +1,8 @@
-@import '~@2orgu/layout/test';
+@import '~@2orgu/layout/media-queries';
 
 :host {
   display: block;
-  $color: blue;
-  background-image: url("{{STORAGE_URL}}/test123");
-  margin-top: theme('screens.mobile.max');
-  margin-left: $test;
+  @include on-mobile-and-tablet {
+    background-image: url("{{STORAGE_URL}}/test123");
+  }
 }

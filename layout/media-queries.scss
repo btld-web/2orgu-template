@@ -1,0 +1,22 @@
+$minTablet: theme('screens.tablet.min');
+$maxTablet: theme('screens.tablet.max');
+
+@mixin on-mobile {
+  @media (max-width: #{$minTablet - 1px}) { @content; }
+}
+
+@mixin on-tablet {
+  @media (min-width: #{$minTablet}) and (max-width: #{$maxTablet}) { @content; }
+}
+
+@mixin on-desktop {
+  @media (min-width: #{$minTablet + 1px}) { @content; }
+}
+
+@mixin on-tablet-and-desktop {
+  @media (min-width: #{$minTablet}) { @content; }
+}
+
+@mixin on-mobile-and-tablet {
+  @media (max-width: #{$maxTablet}) { @content; }
+}
