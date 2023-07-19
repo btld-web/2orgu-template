@@ -15,6 +15,7 @@ export class ExampleFaq {
 
   componentWillLoad() {
     this.service.openOnlyOne = true;
+    this.service.ExpandHeader = 'example-expand-header';
     this.service.load();
   }
 

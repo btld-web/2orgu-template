@@ -47,14 +47,19 @@ export class FaqServiceV1 {
 
   renderExpand = (item: FaqItem) => {
     return (
-      <this.Expand open={item.open}>
-        <this.ExpandHeader slot="header" onClick={this.toggle(item)}>
+      <this.Expand open={item.open} item={item}>
+        <this.ExpandHeader
+          slot="header"
+          onClick={this.toggle(item)}
+          item={item}
+        >
           {item.title}
         </this.ExpandHeader>
         <this.ExpandContent
           slot="content"
           class="csb-prose"
           innerHTML={item.description}
+          item={item}
         />
       </this.Expand>
     );
