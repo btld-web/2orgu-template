@@ -1,0 +1,38 @@
+:host {
+
+  // Layout
+
+  display: grid;
+  grid-template-rows: auto 0fr;
+
+  slot[name="content"] {
+    display: block;
+    overflow: hidden;
+  }
+
+  // Animation
+
+  transition: grid-template-rows 0.3s;
+  slot[name="content"] {
+    transition: padding 0.3s;
+  }
+
+  // Colors
+
+  slot[name="content"] {
+    background-color: grey;
+  }
+}
+
+:host([open]) {
+
+  // Layout
+
+  grid-template-rows: auto 1fr;
+
+  // Spacing
+
+  slot[name="content"] {
+    padding: 20px 0;
+  }
+}

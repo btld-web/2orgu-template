@@ -9,7 +9,11 @@ interface State {
 }
 
 export class FaqServiceV1 {
-  public constructor(private state: State, private prefix = 'csb') {}
+  public constructor(
+    public state: State,
+    public prefix = 'csb',
+    public config: any
+  ) {}
 
   // Tags
   public Expand = this.prefix + '-expand';
@@ -29,7 +33,7 @@ export class FaqServiceV1 {
     setTimeout(() => {
       this.state.faqs = example;
       this.loading = false;
-    }, 2000);
+    }, 200);
   }
 
   render = () => {

@@ -6,6 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface ExampleExpand {
+        "open": boolean;
+    }
     interface ExampleFaq {
         "name": string;
     }
@@ -25,6 +28,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLExampleExpandElement extends Components.ExampleExpand, HTMLStencilElement {
+    }
+    var HTMLExampleExpandElement: {
+        prototype: HTMLExampleExpandElement;
+        new (): HTMLExampleExpandElement;
+    };
     interface HTMLExampleFaqElement extends Components.ExampleFaq, HTMLStencilElement {
     }
     var HTMLExampleFaqElement: {
@@ -38,11 +47,15 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "example-expand": HTMLExampleExpandElement;
         "example-faq": HTMLExampleFaqElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface ExampleExpand {
+        "open"?: boolean;
+    }
     interface ExampleFaq {
         "name"?: string;
     }
@@ -61,6 +74,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "example-expand": ExampleExpand;
         "example-faq": ExampleFaq;
         "my-component": MyComponent;
     }
@@ -69,6 +83,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "example-expand": LocalJSX.ExampleExpand & JSXBase.HTMLAttributes<HTMLExampleExpandElement>;
             "example-faq": LocalJSX.ExampleFaq & JSXBase.HTMLAttributes<HTMLExampleFaqElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
