@@ -1,11 +1,9 @@
 {
   "name": "@2orgu/monorepo",
   "version": "0.0.0",
-  "directories": {
-    "project1": "project1"
-  },
   "scripts": {
-    "start": "npm run start -w project1"
+    "start": "npm run start -w project",
+    "generate": "node ./helper/generate.mjs"
   },
   "author": "Florian Rüberg",
   "dependencies": {
@@ -14,12 +12,13 @@
     "@stencil/sass": "^3.0.4",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.38",
+    "inquirer": "^9.2.10",
     "jest": "^27.5.1",
     "jest-cli": "^27.5.1",
     "postcss-replace": "^2.0.1",
     "puppeteer": "^20.7.3"
   },
   "workspaces": [
-    "project1"
+    "project"
   ]
 }
