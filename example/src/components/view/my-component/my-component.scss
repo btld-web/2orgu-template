@@ -1,8 +1,0 @@
-@import '~@2orgu/layout/media-queries';
-
-:host {
-  display: block;
-  @include on-mobile-and-tablet {
-    background-image: url("{{STORAGE_URL}}/test123");
-  }
-}
